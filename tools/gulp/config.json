@@ -1,0 +1,162 @@
+{
+    "name": "Listen App",
+    "desc": "Online Music Streaming App",
+    "version": "2.0.0",
+    "config": {
+        "debug": false,
+        "root": "../src",
+        "output": "../dist",
+        "node_modules": "./node_modules",
+        "compile": {
+            "compressJs": false,
+            "compressCss": false,
+            "compressHtml": false,
+            "jsSourcemaps": false,
+            "cssSourcemaps": false
+        }
+    },
+    "assets": {
+        "html": "{$config.root}/**/*.html",
+        "images": "{$config.root}/images/**/*",
+        "styles": "{$config.root}/scss/**/*.scss",
+        "scripts": "{$config.root}/js/**/*.js"
+    },
+    "build": {
+        "resources": {
+            "base": {
+                "src": {
+                    "styles": [
+                        "{$config.root}/scss/styles.scss"
+                    ],
+                    "scripts": [
+                        "{$config.root}/js/**/**.js"
+                    ]
+                },
+                "dist": {
+                    "styles": "{$config.output}/css/styles.bundle.css",
+                    "scripts": "{$config.output}/js/scripts.bundle.js"
+                }
+            },
+            "files": {
+                "src": {
+                    "scripts": [
+                        "{$config.root}/js/custom/**/*.js"
+                    ],
+                    "images": [
+                        "{$config.root}/images/**/*.*"
+                    ],
+                    "audio": [
+                        "{$config.root}/audio/**/*"
+                    ],
+                    "html": [
+                        "{$config.root}/**/*.html"
+                    ]
+                },
+                "output": {
+                    "scripts": "{$config.output}/js/custom",
+                    "images": "{$config.output}/images",
+                    "audio": "{$config.output}/audio",
+                    "html": "{$config.output}"
+                }
+            }
+        },
+        "plugins": {
+            "global": {
+                "src": {
+                    "mandatory": {
+                        "jquery": {
+                            "scripts": [
+                                "{$config.node_modules}/jquery/dist/jquery.js"
+                            ]
+                        },
+                        "bootstrap": {
+                            "styles": [
+                                "{$config.root}/vendors/bootstrap/bootstrap.scss"
+                            ],
+                            "scripts": [
+                                "{$config.node_modules}/bootstrap/dist/js/bootstrap.bundle.js"
+                            ]
+                        },
+                        "amplitude-js": {
+                            "scripts": [
+                                "{$config.node_modules}/amplitudejs/dist/amplitude.js"
+                            ]
+                        },
+                        "moment": {
+                            "scripts": [
+                                "{$config.node_modules}/moment/min/moment.min.js"
+                            ]
+                        },
+                        "perfect-scrollbar": {
+                            "styles": [
+                                "{$config.node_modules}/perfect-scrollbar/css/perfect-scrollbar.css"
+                            ],
+                            "scripts": [
+                                "{$config.node_modules}/perfect-scrollbar/dist/perfect-scrollbar.js"
+                            ]
+                        },
+                        "wnumb": {
+                            "scripts": [
+                                "{$config.node_modules}/wnumb/wnumb.js"
+                            ]
+                        }
+                    },
+                    "optional": {
+                        "chart.js": {
+                            "scripts": [
+                                "{$config.node_modules}/chart.js/dist/chart.js"
+                            ]
+                        },
+                        "dropzone": {
+                            "styles": [
+                                "{$config.node_modules}/dropzone/dist/dropzone.css"
+                            ],
+                            "scripts": [
+                                "{$config.node_modules}/dropzone/dist/dropzone-min.js"
+                            ]
+                        },
+                        "ionicons": {
+                            "styles": [
+                                "{$config.node_modules}/ionicons/dist/css/ionicons.css"
+                            ],
+                            "fonts": [
+                                "{$config.node_modules}/ionicons/dist/fonts/**/*"
+                            ]
+                        },
+                        "node-snackbar":{
+                            "styles": [
+                                "{$config.node_modules}/node-snackbar/dist/snackbar.css"
+                            ],
+                            "scripts": [
+                                "{$config.node_modules}/node-snackbar/dist/snackbar.js" 
+                            ]
+                        },
+                        "remixicon":{
+                            "styles": [
+                                "{$config.root}/vendors/remixicon/css/remixicon.css"
+                            ],
+                            "fonts": [
+                                "{$config.root}/vendors/remixicon/fonts/**/*"
+                            ]
+                        },                        
+                        "swiper":{
+                            "styles": [
+                                "{$config.node_modules}/swiper/swiper-bundle.css"
+                            ],
+                            "scripts": [
+                                "{$config.node_modules}/swiper/swiper-bundle.js" 
+                            ]
+                        }
+                    }
+                },
+                "dist": {
+                    "styles": "{$config.output}/css/plugins.bundle.css",
+                    "scripts": "{$config.output}/js/plugins.bundle.js",
+                    "images": "{$config.output}/images",
+                    "fonts": "{$config.output}/fonts"
+                }
+            },
+            "custom": {}
+        }
+    }
+}
